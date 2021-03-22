@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~  Copyright 2019, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/login_fragment">
+
+    <fragment
+            android:id="@+id/main_fragment"
+            android:name="com.example.happy.MainFragment"
+            android:label="MainFragment"
+            tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_MainFragment_to_SettingsFragment"
+            app:destination="@id/settings_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_main_fragment_to_map_activity"
+            app:destination="@id/map_activity"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim">
+        </action>
+        <action
+            android:id="@+id/action_main_fragment_to_movies_fragment"
+            app:destination="@id/movies_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+            android:id="@+id/settings_fragment"
+            android:name="com.example.happy.SettingsFragment"
+            android:label="SettingsFragment"
+            tools:layout="@xml/settings">
+    </fragment>
+    <fragment
+            android:id="@+id/login_fragment"
+            android:name="com.example.happy.LoginFragment"
+            android:label="LoginFragment"
+            tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_LoginFragment_to_MainFragment"
+            app:destination="@+id/main_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_main_fragment"
+            app:destination="@id/main_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <activity
+        android:id="@+id/map_activity"
+        android:name="com.example.happy.UserPickPlaces"
+        android:label="MapIntent"
+        tools:layout="@layout/fragment_map"/>
+    <fragment
+        android:id="@+id/movies_fragment"
+        android:name="com.example.happy.UserPickMovies"
+        android:label="MoviesFragment"
+        tools:layout="@layout/fragment_movies" />
+    <fragment
+        android:id="@+id/friend_fragment"
+        android:name="com.example.happy.AddFriend"
+        android:label="FriendFragment" />
+
+</navigation>

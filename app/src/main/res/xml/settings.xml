@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/settings_fragment">
+        <ListPreference
+            android:key="@string/preference_fact_type_key"
+            android:title="@string/settings_fact_type_title"
+            android:entries="@array/fact_type"
+            android:entryValues="@array/fact_type"
+            android:defaultValue="@string/fact_type_app" />
+    </PreferenceScreen>
