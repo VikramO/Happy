@@ -1,2 +1,2 @@
 # Happy
-The Happy app
+Python scripts for database populating
